@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 4.2</title>
+</head>
+<body>
+<script>
+	// Генерація масиву з 15 випадкових чисел 1..50
+	let arr = [];
+	for (let i = 0; i < 15; i++) {
+		arr.push(Math.floor(Math.random()*50)+1);
+	}
+	document.write("Початковий масив: " + arr.join("  ") + "<br>");
+
+	function swap(i,j){
+		let temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+	
+	maxIndex=0;
+	for (let i=1;i<arr.length;i++){
+		if(arr[i]>arr[maxIndex]) maxIndex=i;
+	}
+	document.write("Максимальний елемент: " + arr[maxIndex] + "<br>");
+	swap(maxIndex, arr.length-2);
+	document.write("Після обміну з передостаннім елементом: " + arr.join("  ") + "<br>");
+
+	
+</script>
+</body>
+</html>

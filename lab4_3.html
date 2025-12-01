@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 4.3 - Завдання</title>
+</head>
+<body>
+<script>
+	// Генерація масиву з 15 випадкових чисел від -20 до 30
+	let N = 15;
+	let arr = [];
+	for (let i = 0; i < N; i++) {
+		arr.push(Math.floor(Math.random()*51) - 20); // числа від -20 до 30
+	}
+	document.write("<p>Масив: " + arr.join("  ") + "</p>");
+
+	// Задаємо проміжок [A,B)
+	let A = 5;
+	let B = 20;
+
+	// Середнє арифметичне чисел у проміжку [A,B)
+	let filtered = arr.filter(num => num >= A && num < B);
+	let sum = filtered.reduce((acc, num) => acc + num, 0);
+	let mean = filtered.length > 0 ? (sum / filtered.length) : 0;
+	document.write("<p>Середнє арифметичне чисел у проміжку [" + A + "," + B + "): " + mean.toFixed(2) + "</p>");
+
+	// Кількість додатних чисел на місцях, кратних 4
+	let count = 0;
+	for (let i = 3; i < arr.length; i += 4) { // індекси 3,7,11...
+		if (arr[i] > 0) count++;
+	}
+	document.write("<p>Кількість додатних чисел на місцях, кратних 4: " + count + "</p>");
+</script>
+</body>
+</html>

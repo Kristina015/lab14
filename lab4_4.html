@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 4.4</title>
+</head>
+<body>
+<script>
+	let fruits=['apple','pineapple','mango','melon','grape'];
+	let citrus=['orange','lemon','lime'];
+
+	document.write("fruits: " + fruits.join(", ") + "<br>");
+	document.write("citrus: " + citrus.join(", ") + "<br>");
+
+	let allFruits = fruits.concat();
+	document.write("Об'єднаний масив fruits: " + allFruits.join(", ") + "<br>");
+
+	// Вставка після mango
+	let mangoIndex = fruits.indexOf("mango");
+	if(mangoIndex>=0){
+		fruits.splice(mangoIndex+1,0,"pear","cherry","plum","raspberry","strawberry");
+	}
+	document.write("Після вставки: " + fruits.join(", ") + "<br>");
+
+	// Видалення останніх 3 елементів
+	fruits.splice(-3,3);
+	document.write("Після видалення останніх 3 елементів: " + fruits.join(", ") + "<br>");
+
+	// Сортування за алфавітом
+	fruits.sort();
+	document.write("В алфавітному порядку: " + fruits.join(", ") + "<br>");
+
+	// Зворотний алфавіт
+	fruits.reverse();
+	document.write("Зворотний алфавіт: " + fruits.join(", ") + "<br>");
+
+	// Сортування за довжиною слів
+	fruits.sort((a,b)=>a.length-b.length);
+	document.write("За довжиною слів: " + fruits.join(", ") + "<br>");
+</script>
+</body>
+</html>

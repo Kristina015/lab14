@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 4.1</title>
+</head>
+<body>
+<script>
+	// Масив трикутних чисел n(n+1)/2 для n = 1..10
+	let Treag = [];
+	for (let n = 1; n <= 10; n++) {
+		Treag.push(n*(n+1)/2);
+	}
+	document.write("Treag: " + Treag.join("  ") + "<br>");
+
+	// Масив квадратів натуральних чисел 1..10
+	let kvd = [];
+	for (let n = 1; n <= 10; n++) {
+		kvd.push(n*n);
+	}
+	document.write("kvd: " + kvd.join("  ") + "<br>");
+
+	// Об'єднання масивів
+	let rez = Treag.concat(kvd);
+	document.write("rez: " + rez.join("  ") + "<br>");
+
+	// Сортування у зворотному порядку
+	rez.sort(function(a,b){return b-a});
+	document.write("rez (зворотній порядок): " + rez.join("  ") + "<br>");
+</script>
+</body>
+</html>
